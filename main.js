@@ -15,12 +15,12 @@ function getTedTalkTitle() {
         .then(res => {
             let titleForFirstTEDTalkRetrieved = res.items[3].snippet.title;
             if (res == undefined) {
-              let  titleForFirstTEDTalkRetrieved = 'Crisis support for the world, one text away | Nancy Lublin';
+              titleForFirstTEDTalkRetrieved = 'Crisis support for the world, one text away | Nancy Lublin';
             }
 
             let imageUrl = res.items[3].snippet.thumbnails.medium.url;
             if (res == undefined) {
-              let imageUrl = 'https://i.ytimg.com/vi/TntLjM_uBT0/maxresdefault.jpg';
+              imageUrl = 'https://i.ytimg.com/vi/TntLjM_uBT0/maxresdefault.jpg';
             }
             document.querySelector('#title-of-ted-talk').innerHTML = titleForFirstTEDTalkRetrieved;
             document.querySelector('img[src=""]').src = imageUrl;
@@ -28,8 +28,10 @@ function getTedTalkTitle() {
             let videoIdForFirstTEDTalkRetrieved = 'TntLjM_uBT0';
             let linkToThisTEDTalk = `https://www.youtube.com/watch?v=${videoIdForFirstTEDTalkRetrieved}`;
             document.querySelector('a[href="https://www.ted.com"]').href = linkToThisTEDTalk;
-            // console.log(res);
-            // console.log(res.items[0].snippet.thumbnails.medium.url);
+
+            console.log("hello there");
+            console.log(res);
+            console.log(res.items[0].snippet.thumbnails.medium.url);
         })
 };
 
