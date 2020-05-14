@@ -7,14 +7,14 @@
   
     "browser_action": {
       "default_title": "TED Talks Recommender",
-      "default_popup": "popup.html"
+      "default_popup": "main.html"
     },
   
     "content_scripts": [
         {
             "matches": ["<all_urls>"],
             "js": [
-                "popup.js"
+                "main.js"
             ],
             "run_at": "document_end"
         }
@@ -25,9 +25,9 @@
     },
   
     "icons": {
-        "16": "myIcon.png",
-        "48": "myIcon.png",
-        "128": "myIcon.png"
+        "16": "TED-round-200.png",
+        "48": "TED-round-200.png",
+        "128": "TED-round-200.png"
     },
 
     "permissions": ["activeTab"]

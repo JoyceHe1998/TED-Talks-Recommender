@@ -1,3 +1,84 @@
+html {
+    height: 350px;
+}
+
 body {
     font-family: 'Montserrat', sans-serif;
 }
+
+.container-all {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+}
+
+.extension-icon-title-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.extension-title {
+    padding-left: 10px;
+    padding-top: 2px;
+    color: black;
+    font-size: 31;
+    font-weight: 700;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.ted-logo {
+    width: 86px;
+    height: 42px;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+.title-of-ted-talk {
+    color: white; 
+    padding: 5px 0 0 5px;
+    position: absolute;
+    font-weight: 600;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.ted-talk-container {
+    display: flex;
+    flex-direction: column;
+    align-content: space-around;
+    align-items: center;
+}
+
+.img-title-container {
+    /* padding-bottom: 20px; */
+    display: flex;
+    position: relative;
+}
+
+.img-of-ted-talk {
+    margin-top: 5px;
+    width: 420px;
+    border-radius: .25rem;
+}
+
+#title-of-ted-talk {
+    max-width: 540px;
+    font-size: 20;
+    font-family: 'Montserrat', sans-serif;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+.button-to-ted-talk {
+    margin-top: 8px;
+    width: 420;
+    height: 45;
+    background-color: #e42c1c;
+    border-color: #e42c1c;
+    color: white;
+    font-weight: 600;
+    border-radius: .25rem;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20;
+}
+
+
+

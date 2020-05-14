@@ -1,15 +1,26 @@
 <html> 
     <head>
-        <title></title>
         <link rel="stylesheet" type="text/css" href="main.css"/>
+        <title></title>
         <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     </head>
     <body>
-        <img src="myIcon.png" id="extension icon" />
-        <h1 id="ted-talk-title"></h1>
-        <a id="link-to-ted-talk" href="https://www.ted.com" target="blank">
-            <button>Watch this TED talk</button>
-        </a>
+        <div class="container-all">
+            <div class="extension-icon-title-container">
+                <img src="./tedLogo.png" width="40" class="ted-logo"/>
+                <div class="extension-title">Talks Recommender</div>
+            </div>
+            <div class="ted-talk-container">
+                <div class="img-title-container">
+                    <div id="title-of-ted-talk" class="title-of-ted-talk"></div>
+                    <img id="img-of-ted-talk" src="" class="img-of-ted-talk"/>
+                </div>
+                <!-- <img id="img-of-ted-talk" src="" class="img-of-ted-talk"/> -->
+                <a class="link-to-ted-talk" href="https://www.ted.com" target="blank">
+                    <button class="button-to-ted-talk">Watch this on YouTube</button>
+                </a>
+            </div>
+        </div>
     </body>
     <script src="main.js"></script>
 </html>
