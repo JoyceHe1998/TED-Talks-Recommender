@@ -13,12 +13,12 @@ function getTedTalkTitle() {
     fetch(url)
         .then(res => res.json())
         .then(res => {
-            let titleForFirstTEDTalkRetrieved = res.items[1].snippet.title;
+            let titleForFirstTEDTalkRetrieved = res.items[3].snippet.title;
             if (res == undefined) {
               let  titleForFirstTEDTalkRetrieved = 'Crisis support for the world, one text away | Nancy Lublin';
             }
 
-            let imageUrl = res.items[1].snippet.thumbnails.medium.url;
+            let imageUrl = res.items[3].snippet.thumbnails.medium.url;
             if (res == undefined) {
               let imageUrl = 'https://i.ytimg.com/vi/TntLjM_uBT0/maxresdefault.jpg';
             }
