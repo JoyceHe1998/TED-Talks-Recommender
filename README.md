@@ -8,4 +8,4 @@
 ![extension-icon](https://github.com/JoyceHe1998/TED-Talks-Recommender/blob/master/TED-round-200.png)
 
 ### Pop-up window:
-![pop-up-window](https://github.com/JoyceHe1998/TED-Talks-Recommender/blob/master/screenshots/webPage.png)
+![pop-up-window](https://github.com/JoyceHe1998/TED-Talks-Recommender/blob/master/screenshots/pop-up-screenshot.png)
