@@ -15,12 +15,42 @@
                     <div id="title-of-ted-talk" class="title-of-ted-talk"></div>
                     <img id="img-of-ted-talk" src="" class="img-of-ted-talk"/>
                 </div>
-                <!-- <img id="img-of-ted-talk" src="" class="img-of-ted-talk"/> -->
                 <a class="link-to-ted-talk" href="https://www.ted.com" target="blank">
                     <button class="button-to-ted-talk">Watch this on YouTube</button>
                 </a>
             </div>
         </div>
+        <!-- <script>
+            const data = {'number': 678};
+            const options = {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            };
+            fetch('/api', options).then(response => {
+                console.log(response.json());
+            })
+
+            getData();
+            async function getData() {
+                const response = await fetch('/api');
+                const data = await response.json();
+
+                for (item of data) {
+                    const root = document.createElement('div');
+                    const number = document.createElement('div');
+
+                    root.textContent = `the fetched data is : ${item.number}`;
+                    number.textContent = `the number: ~ ${item.number}`;
+
+                    root.append(number);
+                    document.body.append(root);
+                }
+                console.log(data);
+            }
+        </script> -->
     </body>
     <script src="main.js"></script>
 </html>

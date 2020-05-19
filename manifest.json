@@ -25,10 +25,13 @@
     },
   
     "icons": {
-        "16": "TED-round-200.png",
+        "16": "TED-round-128.png",
         "48": "TED-round-200.png",
         "128": "TED-round-200.png"
     },
 
-    "permissions": ["activeTab"]
+    "permissions": [
+      "activeTab",
+      "http://localhost/*"
+    ]
   }
