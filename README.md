@@ -5,7 +5,7 @@ The motto of TED is "Ideas worth spreading". This Chrome extension helps spread 
 Using Machine Learning models to recommend videos based on the topic tags of the videos user has clicked before: the ted talks have been clustered (20 clusters for now), and the video to be recommended to users next will be from the same cluster. 
 
 ## How I clustered TED talks:
-The data of each TED talk I fetched from the Youtube Data API includes videos' tags (e.g. for this TED talk: "3 lessons on decision-making from a poker champion | Liv Boeree", the tags are "sports, psychology, choice"). I used **TFIDF** to extract the most relevant keywords of each TED talk that I can use in clustering. Then I generated the clusters using **KMeans**. 
+The data of each TED talk I fetched from the Youtube Data API includes videos' tags (e.g. for this TED talk: "3 lessons on decision-making from a poker champion | Liv Boeree", the tags are "sports, psychology, choice"). I used **TFIDF** to extract the most relevant tags of each TED talk that I can use in clustering. Then I generated the clusters using **KMeans**. 
 
 ## Current Screenshots:
 
