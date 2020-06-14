@@ -71,7 +71,7 @@ def cluster_ted_talks_by_tags():
     clusters = KMeans(n_clusters=number_of_clusters).fit_predict(text)
     data['cluster'] = clusters
     data = data.sort_values('cluster')
-    generate_cluster_wordclouds(text, clusters, tfidf.get_feature_names(),30)
+    generate_cluster_wordclouds(text, clusters, tfidf.get_feature_names(), 15)
     return data
 
 if __name__ == '__main__':

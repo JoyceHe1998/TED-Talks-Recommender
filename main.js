@@ -12,44 +12,73 @@ const nextPageToken = 'CNgEEAA'; //  CDIQAA CGQQAA CJYBEAA CMgBEAA CPoBEAA CKwCE
 // get playlists in the TED channel
 const urlToFetchPlaylists = `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet,contentDetails&maxResults=50&playlistId=${playlistId}&key=${apiKey}&pageToken=${nextPageToken}`;
 
-// function getTedTalkTitle() {
-//     let url = urlToFetchPlaylists;
-//     fetch(url)
-//         .then(res => res.json())
-//         .then(res => {
-//             // let titleForFirstTEDTalkRetrieved = res.items[3].snippet.title;
-//             // if (res == undefined) {
-//             let titleForFirstTEDTalkRetrieved = 'Crisis support for the world, one text away | Nancy Lublin';
-//             // }
+function getTedTalkTitle() {
+    // let url = urlToFetchPlaylists;
+    // fetch(url)
+    //     .then(res => res.json())
+    //     .then(res => {
+            // let titleForFirstTEDTalkRetrieved = res.items[3].snippet.title;
+            // if (res == undefined) {
+            let titleForFirstTEDTalkRetrieved = 'Crisis support for the world, one text away | Nancy Lublin';
+            // }
 
-//             // let imageUrl = res.items[3].snippet.thumbnails.medium.url;
-//             // if (res == undefined) {
-//             let imageUrl = 'https://i.ytimg.com/vi/TntLjM_uBT0/maxresdefault.jpg';
-//             // }
-//             document.querySelector('#title-of-ted-talk').innerHTML = titleForFirstTEDTalkRetrieved;
-//             document.querySelector('img[src=""]').src = imageUrl;
+            // let imageUrl = res.items[3].snippet.thumbnails.medium.url;
+            // if (res == undefined) {
+            let imageUrl = 'https://i.ytimg.com/vi/TntLjM_uBT0/maxresdefault.jpg';
+            // }
+            document.querySelector('#title-of-ted-talk').innerHTML = titleForFirstTEDTalkRetrieved;
+            document.querySelector('img[src=""]').src = imageUrl;
 
-//             let videoIdForFirstTEDTalkRetrieved = 'TntLjM_uBT0';
-//             let linkToThisTEDTalk = `https://www.youtube.com/watch?v=${videoIdForFirstTEDTalkRetrieved}`;
-//             document.querySelector('a[href="https://www.ted.com"]').href = linkToThisTEDTalk;
+            let videoIdForFirstTEDTalkRetrieved = 'TntLjM_uBT0';
+            let linkToThisTEDTalk = `https://www.youtube.com/watch?v=${videoIdForFirstTEDTalkRetrieved}`;
+            document.querySelector('a[href="https://www.ted.com"]').href = linkToThisTEDTalk;
 
-//             // console.log("hello there");
-//             console.log(res);
-//             // console.log(res.items[0].snippet.thumbnails.medium.url);
+            // console.log("hello there");
+            // console.log(res);
+            // console.log(res.items[0].snippet.thumbnails.medium.url);
 
 
-//             let videoIdsFetched = [];
-//             res.items.map(item => videoIdsFetched.push(item.contentDetails.videoId));
-//             console.log(videoIdsFetched);
-//         })
-// };
+        //     let videoIdsFetched = [];
+        //     res.items.map(item => videoIdsFetched.push(item.contentDetails.videoId));
+        //     console.log(videoIdsFetched);
+        // })
+};
 
-// getTedTalkTitle();
+getTedTalkTitle();
 
 function getClustersAndWordCloud() {
     fetch('http://localhost:5000/get_clusters_and_wordcloud')
         .then(res => res.json())
-        .then(res => console.log(res))
+        .then(res => {
+            console.log(res)
+
+            var wordCloudContainer = document.getElementById('wordclouds-container');
+            var wordClouds = res.wordCloudImages;
+            for (var i=0; i<wordClouds.length; i++) {
+                var wordcloud = document.createElement('img'); 
+                wordcloud.src = 'data:image/png;base64, ' + wordClouds[i]['cluster' + i];
+                wordcloud.width = 550;
+                wordCloudContainer.appendChild(wordcloud);
+            }
+
+            var tedTalksForEachClusterContainer = document.getElementById('ted-talks-of-each-cluster-container');
+            for (var j=0; j<20; j++) {
+                var tedTalkContainer = document.createElement('div');
+                tedTalkContainer.className = 'img-title-container'; 
+                
+                var tedTalkTitle = document.createElement('div'); 
+                tedTalkTitle.className = 'title-of-ted-talk';
+                tedTalkTitle.innerHTML = res.table[j]['title'];
+
+                var tedTalkImage = document.createElement('img'); 
+                tedTalkImage.src = 'https://i.ytimg.com/vi/' + res.table[j]['id'] + '/maxresdefault.jpg';
+                tedTalkImage.width = 550;
+
+                tedTalkContainer.appendChild(tedTalkTitle);
+                tedTalkContainer.appendChild(tedTalkImage);
+                tedTalksForEachClusterContainer.appendChild(tedTalkContainer);
+            }
+        })
 }
 
 getClustersAndWordCloud();
